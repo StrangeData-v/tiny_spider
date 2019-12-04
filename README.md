@@ -7,13 +7,13 @@ Because this spider script is so tiny to describe, so I just put the origenal co
 
 But even thought the script is so tihy and simple, I still catch some troubles.
 
-1. Hack The OA Account Check.
+__1. Hack The OA Account Check.__
 
 OA system is a complex infomation system for enterprize, so it has a high level security politics such as Identify Check or others. In this project, one trouble for me is how to cheat the OA system that I am a people rathor than a python Robot. One convinent method is using the Cookies in that moment. 
 
 For specific, we should obtain the cookies info from web inspect page (Ctrl + Shift + I). Do any operation in the page and then get the cookies info from network's files, such as this:
 
-show cookeis
+ ![alt-text](https://github.com/StrangeData-v/tiny_spider/blob/master/show_cookies.png)
 
 And then use the cookies to create a headers:
 
@@ -28,7 +28,6 @@ response = requests.get(url = url , headers = hd)
 soup = bs4.BeautifulSoup(response.content)
 ```
 
-2. Analyse Html File
+__2. Analyse Html File__
 
-Just use bs4 and built-in function to finish this part.
-
+Just use bs4 and built-in function to finish this part. A commen process of getting information from a page html file. But in this part, using __re__ (regular expression) will be better. 
